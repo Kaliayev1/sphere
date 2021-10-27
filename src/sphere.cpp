@@ -73,7 +73,7 @@ int main(int argc, char **argv){
   while(ros::ok()){
     
     gvCmdMoteurs.x = pid_vit.calculate(gvCmd.x, gvPosA.x);
-    gvCmdMoteurs.y = pid_vit.calculate(gvCmd.y, gvPosA.y);
+    gvCmdMoteurs.y = pid_dir.calculate(gvCmd.y, gvPosA.y);
     
     pub_CmdMoteurs.publish(gvCmdMoteurs);
     pub_gvCmd.publish(gvCmd); //pour debug
